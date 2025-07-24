@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devanjali Kesarwani - Marketing Consultant & Career Coach</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #ffffff;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c2c2c;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c2c2c;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 100px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #2c2c2c;
+            object-fit: cover;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            color: #555;
+        }
+
+        .email-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2c2c2c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: 2px solid #2c2c2c;
+            transition: all 0.3s ease;
+            font-family: 'Crimson Text', serif;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .email-button:hover {
+            background: white;
+            color: #2c2c2c;
+        }
+
+        /* Section Titles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            font-size: 18px;
+        }
+
+        /* Dual Persona Section */
+        .dual-persona {
+            background: #f9f9f9;
+        }
+
+        .persona-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .persona-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .persona-icon {
+            font-size: 48px;
+            color: #2c2c2c;
+            margin-bottom: 20px;
+        }
+
+        .persona-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #2c2c2c;
+            padding: 12px 25px;
+            text-decoration: none;
+            border: 2px solid #2c2c2c;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .cta-button:hover {
+            background: #2c2c2c;
+            color: white;
+        }
+
+        /* Resources Section */
+        .resources {
+            background: white;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .resource-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .resource-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+        }
+
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 20px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: #2c2c2c;
+            color: white;
+        }
+
+        /* Skills Wall */
+        .skills-wall {
+            background: #f9f9f9;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .skill-category h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            font-size: 22px;
+            color: #2c2c2c;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: #f5f5f5;
+            padding: 8px 16px;
+            border: 1px solid #e5e5e5;
+            font-size: 14px;
+            color: #2c2c2c;
+        }
+
+        /* Language Bars */
+        .language-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .language-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .language-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .language-label .level {
+            font-size: 12px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .language-bar {
+            width: 100%;
+            height: 8px;
+            background: #f0f0f0;
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+        }
+
+        .language-progress {
+            height: 100%;
+            background: #2c2c2c;
+            width: 0%;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .language-progress.animate {
+            width: var(--progress-width);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c2c2c;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .project-link:hover {
+            background: #2c2c2c;
+            color: white;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: #f9f9f9;
+        }
+
+        .timeline {
+            margin-top: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-left: 4px solid #2c2c2c;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-date {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .company {
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .persona-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .resources-grid,
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">Devanjali Kesarwani</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#skills">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="profile-container">
+                <img src="profile.png" alt="Devanjali Kesarwani" class="profile-pic">
+                <div class="hero-content">
+                    <h1>Devanjali Kesarwani</h1>
+                    <p>Global BBA candidate at ESSEC Business School, France and luxury brand strategist, with hands-on experience in high-end travel concierge services and event management. Bilingual professional specialising in cross-cultural luxury market positioning and high-end client engagement.</p>
+                    <a href="mailto:devanjali.kesarwani@gmail.com" class="email-button">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <p>Currently pursuing Global BBA at ESSEC Business School in France with an Excellence Scholarship of €20,000, I combine academic rigor with practical expertise. As a result, I've ranked #17/664 in my batch. </p>
+                <br>
+                <p>International marketing professional with luxury travel and PR experiences, proven leadership in premium brand management, and entrepreneurial vision cultivated across nations around the globe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section dual-persona" id="services">
+        <div class="container">
+            <h2 class="section-title">How I Can Help You</h2>
+            <p class="section-subtitle">Whether you're a brand seeking marketing expertise or an individual pursuing career growth, I provide tailored solutions to meet your specific needs.</p>
+            
+            <div class="persona-grid">
+                <div class="persona-card fade-in">
+                    <div class="persona-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>For Brands</h3>
+                    <p>Strategic marketing consultation to elevate your brand presence, optimise digital strategies, and drive meaningful engagement with your target audience through unique approaches.</p>
+                    <a href="mailto:devanjali.kesarwani@gmail.com?subject=Discovery Call Request - Brand Consultation&body=Hi Devanjali,%0D%0A%0D%0AI'm interested in a 30-minute discovery call to discuss how you can help with our brand's marketing and social media strategy.%0D%0A%0D%0ACompany Name: [Your Company]%0D%0AIndustry: [Your Industry]%0D%0ACurrent Marketing Challenges: [Brief description]%0D%0AGoals: [What you hope to achieve]%0D%0A%0D%0APlease let me know your availability.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]" class="cta-button">
+                        <i class="fas fa-envelope"></i> Request a Discovery Call
+                    </a>
+                </div>
+                
+                <div class="persona-card fade-in">
+                    <div class="persona-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>For Individuals</h3>
+                    <p>Personalised career coaching, LinkedIn strategy optimisation, and French language instruction to accelerate your professional growth and unlock new opportunities.</p>
+                    <a href="https://topmate.io/devanjali_kesarwani" class="cta-button" target="_blank">
+                        <i class="fas fa-calendar-alt"></i> Book Session
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="section resources" id="resources">
+        <div class="container">
+            <h2 class="section-title">Resources & Links</h2>
+            <p class="section-subtitle">Access my professional documents and connect with me across platforms</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card fade-in">
+                    <h3>Digital Products & Documents</h3>
+                    <p>Access my LinkedIn course and download professional documents</p>
+                    <div class="resource-links">
+                        <a href="#" class="resource-link" onclick="alert('Please upload your English CV and replace this link')">
+                            <i class="fas fa-download"></i>
+                            Download CV (English)
+                        </a>
+                        <a href="#" class="resource-link" onclick="alert('Please upload your French CV and replace this link')">
+                            <i class="fas fa-download"></i>
+                            Téléchargez CV (Français)
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="resource-card fade-in">
+                    <h3>Professional Platforms</h3>
+                    <p>Connect with me and explore my content across different platforms</p>
+                    <div class="resource-links">
+                        <a href="https://devanjali.substack.com/" class="resource-link" target="_blank">
+                            <i class="fas fa-newspaper"></i>
+                            Substack: Juxtaposed
+                        </a>
+                        <a href="https://topmate.io/devanjali_kesarwani" class="resource-link" target="_blank">
+                            <i class="fas fa-calendar-alt"></i>
+                            Topmate Services
+                        </a>
+                        <a href="https://www.linkedin.com/in/devanjali-k/" class="resource-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-wall" id="skills">
+        <div class="container">
+            <h2 class="section-title">Expertise & Skills</h2>
+            <p class="section-subtitle">A comprehensive overview of my professional capabilities and technical competencies</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-tools"></i> Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MS Office Suite</span>
+                        <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Shapr3D</span>
+                        <span class="skill-tag">HTML & CSS</span>
+                        <span class="skill-tag">Slack</span>
+                        <span class="skill-tag">Dropbox</span>
+                        <span class="skill-tag">Jasper AI</span>
+                        <span class="skill-tag">Claude AI</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-language"></i> Languages</h3>
+                    <div class="language-bars">
+                        <div class="language-item">
+                            <div class="language-label">
+                                <span>Hindi</span>
+                                <span class="level">Native</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" data-level="100"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-label">
+                                <span>English</span>
+                                <span class="level">Fluent</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" data-level="100"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-label">
+                                <span>French</span>
+                                <span class="level">Advanced</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-label">
+                                <span>Spanish</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" data-level="25"></div>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-label">
+                                <span>Mandarin</span>
+                                <span class="level">Beginner</span>
+                            </div>
+                            <div class="language-bar">
+                                <div class="language-progress" data-level="20"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-certificate"></i> Certifications & Awards</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">McKinsey Forward Program, 2025</span>
+                        <span class="skill-tag">DELF B1 French, 2022</span>
+                        <span class="skill-tag">Inside LVMH, 2024</span>
+                        <span class="skill-tag">Harvard Excel Modelling, 2023</span>
+                        <span class="skill-tag">Jasper AI, 2025</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3><i class="fas fa-lightbulb"></i> Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Strategic Marketing</span>
+                        <span class="skill-tag">LinkedIn Optimisation</span>
+                        <span class="skill-tag">Content Creation</span>
+                        <span class="skill-tag">Language Instruction</span>
+                        <span class="skill-tag">Project Management</span>
+                        <span class="skill-tag">Cross-cultural Communication</span>
+                        <span class="skill-tag">Business Development</span>
+                        <span class="skill-tag">Luxury Marketing</span>
+                        <span class="skill-tag">Brand Management</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work that has contributed significantly to my growth</p>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <h3>LinkedIn Launchpad Digital Product</h3>
+                        <p>Comprehensive guide helping young professionals optimise their LinkedIn profiles for maximum impact and career opportunities. It features strategic frameworks, practical templates, and actionable insights.</p>
+                        <div class="project-links">
+                            <a href="https://whop.com/lord-of-linkedin" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Course
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <h3>French Language Coaching Program</h3>
+                        <p>Personalised French learning program with 11+ successful students, focusing on practical conversation, DELF preparation, and cultural immersion from a Paris-based perspective.</p>
+                        <div class="project-links">
+                            <a href="https://topmate.io/devanjali_kesarwani" class="project-link" target="_blank">
+                                <i class="fas fa-calendar-alt"></i> Book Session
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">My journey in marketing, business development, education, and international experience</p>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">November 2024 - Present</div>
+                        <h3>Marketing & PR Intern</h3>
+                        <div class="company">Talent Lab by Stanley Communications</div>
+                        <p>Leading content research and strategy for upcoming meetups, creating bulk content ideas, and currently planning my first event that focuses on career development and networking in the luxury sector.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2024 - August 2024</div>
+                        <h3>Administrative Assistant</h3>
+                        <div class="company">Be Essential Club, Luxury Travel Concierge</div>
+                        <p>Assisted CEO Elbia Eddaikra in comprehensive administrative management. Handled accounting, proposals, and administrative tasks while introducing efficiency improvements to organizational processes.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 2023 - April 2025</div>
+                        <h3>Social Media Manager</h3>
+                        <div class="company">ESSEC India</div>
+                        <p>Strategic planning and execution of social media content across Instagram platforms. Event coordination and community building, developing strong interpersonal and communication skills in international context.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">June 2020 - June 2022</div>
+                        <h3>Founder</h3>
+                        <div class="company">Officially French</div>
+                        <p>Founded and operated a French language learning service, teaching 11+ students aged 9-30 through online sessions. Developed Instagram content strategy and created comprehensive language acquisition materials.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://www.instagram.com/officiallyfrench/?hl=fr" class="project-link" target="_blank">
+                                <i class="fab fa-instagram"></i> View Instagram Page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">September 2021 - November 2021</div>
+                        <h3>Content Creation Intern</h3>
+                        <div class="company">Artsy Craftsy Mom Inc.</div>
+                        <p>Social media marketing and content creation intern, focused on Pinterest growth strategy. Developed engaging content for family-oriented arts and crafts blog targeting parents and children.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Let's Connect</h3>
+            <p>Ready to elevate your career or brand? Let's discuss how I can help you achieve your goals.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/devanjali-k/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://topmate.io/devanjali_kesarwani" target="_blank" title="Book a Session">
+                    <i class="fas fa-calendar-alt"></i>
+                </a>
+                <a href="mailto:devanjali.kesarwani@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://devanjali.substack.com/" target="_blank" title="Substack Newsletter">
+                    <i class="fas fa-newspaper"></i>
+                </a>
+            </div>
+            <p style="margin-top: 40px; color: #999; font-size: 14px;">&copy; 2025 Devanjali Kesarwani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate language bars when they come into view
+        const languageObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.language-progress');
+                    progressBars.forEach(bar => {
+                        const level = bar.getAttribute('data-level');
+                        bar.style.setProperty('--progress-width', level + '%');
+                        bar.classList.add('animate');
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe language bars section
+        const languageBarsSection = document.querySelector('.language-bars');
+        if (languageBarsSection) {
+            languageObserver.observe(languageBarsSection.closest('.skill-category'));
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
